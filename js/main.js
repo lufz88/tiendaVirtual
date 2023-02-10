@@ -27,7 +27,7 @@ function iniciar() {
     mostrarProductos(productos)
     elegirProducto();
     comprarMas();    
-    cuotas = prompt("Ingrese la cantidad de cuotas");
+    cuotas = prompt(`Ingrese la cantidad de cuotas`);
     calculadorCuotas(total, cuotas);
     alert(`Pagará $${total} en ${cuotas} cuotas de $${cuota}`);
 }
@@ -42,7 +42,7 @@ function calculadorCuotas(total, cuotas) {
     }
 }
 
-function mostrarProductos(arr) { //puedo usar forEach
+function mostrarProductos(arr) { 
     let listaProductos = [];
     productos.forEach(producto => {
         let mostrar = `${producto.codigo}- ${producto.nombre}`; 
