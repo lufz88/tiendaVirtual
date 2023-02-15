@@ -39,13 +39,18 @@ body {
     margin-top: 12px;
 }
 
-.product-info figure img {
+.product-info button img {
     width: 35px;
     height: 35px;
 }
 
-.product-info figure {
+.product-info button {
     margin: 0;
+}
+
+.product-info button {
+    border: none;
+    background: none;
 }
 
 .product-info div p:nth-child(1) {

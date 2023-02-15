@@ -1,4 +1,4 @@
-const cardsContainer = document.getElementById("cards-container"); 
+const cardsContainer = document.getElementById("cards-container");
 
 let eleccion;
 let total = 0;
@@ -34,14 +34,16 @@ productos.forEach(producto => {
             <div class="product-info">
                 <p>$ ${producto.precio}</p>
                 <p>$ ${producto.nombre}</p>
-                <figure>
-                <img src="./img/icons/bt_add_to_cart.svg" alt="logo-carrito">
-                </figure> 
+                <button>
+                <img src="./img/icons/bt_add_to_cart.svg" alt="logo-carrito" class="add-to-cart">
+                </button> 
             </div>
                            
     `
     cardsContainer.appendChild(tarjeta);
+    
 });
+
 
 // function iniciar() {
 //     mostrarProductos(productos)
