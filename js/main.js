@@ -35,14 +35,20 @@ productos.forEach(producto => {
                 <p>$ ${producto.precio}</p>
                 <p>$ ${producto.nombre}</p>
                 <button>
-                <img src="./img/icons/bt_add_to_cart.svg" alt="logo-carrito" class="add-to-cart">
+                <img src="./img/icons/bt_add_to_cart.svg" alt="logo-carrito" id=${producto.nombre}>
                 </button> 
             </div>
                            
     `
     cardsContainer.appendChild(tarjeta);
-    
+    const button = document.getElementById(`${producto.nombre}`);
+    button.addEventListener("mouseover", () => {button.style.width = "50px"; button.style.height = "50px"});
+    button.addEventListener("mouseout", () => {button.style.width = "40px"; button.style.height = "40px"});
+    // button.addEventListener("click", agregarAlCarrito());
 });
+
+
+
 
 
 // function iniciar() {
