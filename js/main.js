@@ -1,4 +1,13 @@
 const cardsContainer = document.getElementById("cards-container");
+const mostrarCarrito = document.getElementById("mostrar-carrito");
+const myOrder = document.getElementById("my-order");
+mostrarCarrito.addEventListener("click", () => {
+    if(myOrder.style.display === "none") {
+        myOrder.style.display = "grid"
+    } else {
+        myOrder.style.display = "none";
+    }
+});
 
 let eleccion;
 let total = 0;
@@ -38,18 +47,39 @@ productos.forEach(producto => {
                 <img src="./img/icons/bt_add_to_cart.svg" alt="logo-carrito" id=${producto.nombre}>
                 </button> 
             </div>
-                           
     `
     cardsContainer.appendChild(tarjeta);
     const button = document.getElementById(`${producto.nombre}`);
+    let nombreProducto = producto.nombre;
     button.addEventListener("mouseover", () => {button.style.width = "50px"; button.style.height = "50px"});
     button.addEventListener("mouseout", () => {button.style.width = "40px"; button.style.height = "40px"});
     // button.addEventListener("click", agregarAlCarrito());
 });
 
-function agregarAlCarrito(){
-    
-}
+// function agregarAlCarrito(){
+//     switch(nombreProducto) {
+//         case "Pantalón":
+//             <div class="shopping-cart">
+//                 <figure>
+//                     <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+//                 </figure>
+//                 <p>Bike</p>
+//                 <p>130.00</p>
+//             break;
+//         case "Remera":
+//             break;
+//         case "Zapatillas":
+//             break;
+//         case "Guantes":
+//             break;
+//         case "Gorro":
+//             break;
+//         case "Buzo":
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
 /* <div class="shopping-cart">
                 <figure>

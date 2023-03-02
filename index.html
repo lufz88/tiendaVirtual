@@ -11,12 +11,33 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <nav>
+    <div class="navbar-left">
+        <img src="" alt="logo" class="logo">
+
+        
+
+    </div>
+    <div class="navbar-right">
+        <ul>
+            <li class="navbar-shoppingcart">
+                <button id="mostrar-carrito"><img src="./img/icons/icon_shopping_cart.svg" alt="">
+                <div id="cantidad-carrito"></div>
+                </button>
+            </li>
+        </ul>
+
+    </div>
+    
+    </nav>
+
+    <div class="container">
     <section class="main-container">
         <div class="cards-container" id="cards-container">
         </div>
     </section>
     
-    <section class="my-order">
+    <section class="my-order" id="my-order">
         <div class="my-order-container">
             <h1 class="title">Mi carrito</h1>
             <div class="my-order-content">
@@ -30,7 +51,8 @@
                 </div>
             </div>            
             </div>
-        </section>
-        <script src="./js/main.js"></script>
+    </section>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 </html>
