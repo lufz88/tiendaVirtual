@@ -216,6 +216,11 @@ nav {
     font-weight: bold;
 }
 
+.lista-productos {
+    display: flex;
+    flex-direction: column;
+}
+
 .shopping-cart {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -242,6 +247,12 @@ nav {
 .shopping-cart p:nth-child(3) {
     font-size: var(--md);
     font-weight: bold;
+}
+
+#eliminar-producto {
+    background: none;
+    border: none;
+    font-size: 32px;
 }
 
 @media (max-width:640px) {
