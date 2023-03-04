@@ -14,15 +14,12 @@
     <nav>
     <div class="navbar-left">
         <img src="" alt="logo" class="logo">
-
-        
-
     </div>
     <div class="navbar-right">
         <ul>
             <li class="navbar-shoppingcart">
-                <button id="mostrar-carrito"><img src="./img/icons/icon_shopping_cart.svg" alt="">
-                <div id="cantidad-carrito"></div>
+                <button id="ver-carrito"><img src="./img/icons/icon_shopping_cart.svg" alt="">
+                <div id="cantidad-carrito">0</div>
                 </button>
             </li>
         </ul>
@@ -44,13 +41,14 @@
                 <div class="order">
                     <p>
                         <span>03.25.21</span>
-                        <span>6 articles</span>
-                        <p>$560.00</p>
+                        <span id="cantidad-productos">0 artículos</span>
+                        <p id="total"></p>
                     </p>
-                    <div class="lista-productos" id="lista-productos"></div>
+                    
                 </div>
+                <div class="lista-productos" id="lista-productos"></div>
             </div>            
-            </div>
+        </div>
     </section>
     </div>
     <script src="./js/main.js"></script>

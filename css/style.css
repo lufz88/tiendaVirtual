@@ -10,8 +10,9 @@
 }
 
 body {
+    width: 90vw;
     font-family: 'Quicksand', sans-serif;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -99,6 +100,7 @@ nav {
 /* main */
 .container {
     display: flex;
+    justify-content: center;
 } 
 
 .main-container {
@@ -157,32 +159,27 @@ nav {
 
 /* carrito */
 
-#mostrar-carrito {
+#ver-carrito {
     background: none;
     border: none;
 }
 
 .my-order {
-    display: none;
-    width: 30%;
-    height: 50vh;
+    display: flex;
+    width: 40%;
     place-items: center;
 }
 
 .title {
     font-size: var(--lg);
     margin-bottom: 40px;
-}
-
-.my-order-container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    width: 300px;
+    text-align: center;
 }
 
 .my-order-content {
     display: flex;
     flex-direction: column;
+    background-color: var(--text-input-field);
 }
 
 .order {
@@ -190,7 +187,6 @@ nav {
     grid-template-columns: auto 1fr auto;
     gap: 16px;
     align-items: center;
-    background-color: var(--text-input-field);
     margin-bottom: 24px;
     border-radius: 8px;
     padding: 0 24px;
@@ -217,21 +213,23 @@ nav {
 }
 
 .lista-productos {
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 .shopping-cart {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    gap: 16px;
-    margin-bottom: 24px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
     align-items: center;
 }
 
 .shopping-cart figure img {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border-radius: 20px;
     object-fit: cover;
 }
@@ -240,19 +238,19 @@ nav {
     margin: 0;
 }        
 
-.shopping-cart p:nth-child(2) {
+.shopping-cart p:nth-child(3) {
     color: var(--very-light-pink)
 }
 
-.shopping-cart p:nth-child(3) {
-    font-size: var(--md);
+.shopping-cart p:nth-child(1), p:nth-child(4)  {
+    font-size: var(--sm);
     font-weight: bold;
 }
 
 #eliminar-producto {
     background: none;
     border: none;
-    font-size: 32px;
+    font-size: var(--lg);
 }
 
 @media (max-width:640px) {

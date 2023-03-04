@@ -1,7 +1,7 @@
 const cardsContainer = document.getElementById("cards-container");
-const mostrarCarrito = document.getElementById("mostrar-carrito");
+const verCarrito = document.getElementById("ver-carrito");
 const myOrder = document.getElementById("my-order");
-mostrarCarrito.addEventListener("click", () => {
+verCarrito.addEventListener("click", () => {
     if(myOrder.style.display === "none") {
         myOrder.style.display = "grid"
     } else {
@@ -9,17 +9,39 @@ mostrarCarrito.addEventListener("click", () => {
     }
 });
 const listaProductos = document.getElementById("lista-productos");
+const articulos = document.getElementById("cantidad-productos")
+const precioTotal = document.getElementById("total")
+const cantidadCarrito = document.getElementById("cantidad-carrito")
 
-
-let eleccion;
+let carrito = [];
+let carritoStorage = localStorage.getItem("carrito");
+let cantidadArticulos = 0; 
+let cantidadArticulosStorage = localStorage.getItem("cantidadArticulos"); 
 let total = 0;
+let totalStorage = localStorage.getItem("total");
 let cuotas;
 let cuota;
 let pregunta;
 let stringProductos;
 
+if(carritoStorage){
+    carrito = JSON.parse(carritoStorage);
+    mostrarCarrito();
+}
+
+if(cantidadArticulosStorage){
+    cantidadArticulos = parseInt(JSON.parse(cantidadArticulosStorage));
+    articulos.innerHTML = `${cantidadArticulos} artículos`;
+    cantidadCarrito.innerHTML = `${cantidadArticulos}`;
+}
+
+if(totalStorage){
+    total = parseInt(JSON.parse(totalStorage));
+    precioTotal.innerHTML = `$${total}`;
+}
+
 class Producto {
-    constructor(nombre, precio, codigo, foto) {
+    constructor(nombre, precio, codigo, foto, cantidadCarrito = null) {
         this.nombre = nombre;
         this.precio = precio;
         this.codigo = codigo;
@@ -55,19 +77,45 @@ productos.forEach(producto => {
     button.addEventListener("mouseover", () => {button.style.width = "50px"; button.style.height = "50px"});
     button.addEventListener("mouseout", () => {button.style.width = "40px"; button.style.height = "40px"});
     button.addEventListener("click", () => {
-        let productoAgregado = document.createElement("div");
+        if (carrito.some((el) => el.nombre == producto.nombre)) {
+            elemento = carrito.find((el) => el.nombre == producto.nombre)
+            elemento.cantidadCarrito++
+            total += elemento.precio;
+            cantidadArticulos++;
+        } else {
+            producto.cantidadCarrito = 1;
+            carrito.push(producto);
+            total += producto.precio
+            cantidadArticulos++;
+        }
+        localStorage.setItem("cantidadArticulos", JSON.stringify(cantidadArticulos));
+        localStorage.setItem("total", JSON.stringify(total));
+        mostrarCarrito()
+    });
+});
+
+function mostrarCarrito() {
+    localStorage.removeItem("carrito");
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    listaProductos.innerHTML = '';
+    carrito.forEach(producto => {
+    let productoAgregado = document.createElement("div");
     productoAgregado.className = "shopping-cart";
-    productoAgregado.innerHTML = `<figure>
+    productoAgregado.innerHTML = `
+        <p>${producto.cantidadCarrito} X</p>
+        <figure>
         <img src="${producto.foto}" alt="">
         </figure>
         <p>${producto.nombre}</p>
-        <p>${producto.precio}</p>
+        <p>$${producto.precio}</p>
         <button id="eliminar-producto">🗑</button>
     `
     listaProductos.appendChild(productoAgregado);
     });
-});
-
+    precioTotal.innerHTML = `$${total}`;
+    articulos.innerHTML = `${cantidadArticulos} artículos`;
+    cantidadCarrito.innerHTML = `${cantidadArticulos}`;
+}
 
 /* <div class="shopping-cart">
                 <figure>
