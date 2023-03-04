@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculador de cuotas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Proyecto de js</h1>
-    <h2>Calculador de cuotas</h2>
+    <nav>
+    <div class="navbar-left">
+        <img src="" alt="logo" class="logo">
 
+        
+
+    </div>
+    <div class="navbar-right">
+        <ul>
+            <li class="navbar-shoppingcart">
+                <button id="mostrar-carrito"><img src="./img/icons/icon_shopping_cart.svg" alt="">
+                <div id="cantidad-carrito"></div>
+                </button>
+            </li>
+        </ul>
+
+    </div>
+    
+    </nav>
+
+    <div class="container">
+    <section class="main-container">
+        <div class="cards-container" id="cards-container">
+        </div>
+    </section>
+    
+    <section class="my-order" id="my-order">
+        <div class="my-order-container">
+            <h1 class="title">Mi carrito</h1>
+            <div class="my-order-content">
+                <div class="order">
+                    <p>
+                        <span>03.25.21</span>
+                        <span>6 articles</span>
+                        <p>$560.00</p>
+                    </p>
+                    <div class="lista-productos" id="lista-productos"></div>
+                </div>
+            </div>            
+            </div>
+    </section>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>
