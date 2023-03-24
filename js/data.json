@@ -1,0 +1,8 @@
+[
+    {"nombre": "Pantalón", "precio": 5000, "codigo": 1, "foto": "./img/pantalon.jpg","cantidadCarrito": null},
+    {"nombre": "Remera", "precio": 4000 , "codigo": 2, "foto": "./img/remera.jpg","cantidadCarrito": null},
+    {"nombre": "Zapatillas", "precio": 10000 , "codigo": 3, "foto": "./img/zapatillas.jpg","cantidadCarrito": null},
+    {"nombre": "Guantes", "precio": 1000, "codigo": 4, "foto": "./img/guantes.jpg","cantidadCarrito": null},
+    {"nombre": "Gorro", "precio": 2000, "codigo": 5, "foto": "./img/gorro.jpg","cantidadCarrito": null},
+    {"nombre": "Buzo", "precio": 8000, "codigo": 6, "foto": "./img/buzo.jpg","cantidadCarrito": null}
+]

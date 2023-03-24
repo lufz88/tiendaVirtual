@@ -165,7 +165,7 @@ nav {
 }
 
 .my-order {
-    display: flex;
+    display: none;
     width: 40%;
     place-items: center;
 }
